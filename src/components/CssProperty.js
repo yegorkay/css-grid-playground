@@ -11,7 +11,11 @@ class CssProperty extends Component {
     render() {
         return (
             <CssPropertyContainer>
-                <CssCode />
+                <CssCode
+                    gridProp={this.props.cssValue.property}
+                    cssSelector={this.props.cssSelector}
+                    cssValue={this.props.cssValue.values}
+                />
                 <CssGrid />
             </CssPropertyContainer>
         );

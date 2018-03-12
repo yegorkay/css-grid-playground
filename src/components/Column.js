@@ -14,8 +14,13 @@ class Column extends Component {
         return (
             <MainColumn>
                 <h2>{`${this.props.name} Properties`}</h2>
-                <CssProperty />
-                <CssProperty />
+                {this.props.cssProp.map(d => (
+                    <CssProperty
+                        key={d.property}
+                        cssValue={d}
+                        cssSelector={this.props.name}
+                    />
+                ))}
             </MainColumn>
         );
     }
