@@ -4,6 +4,7 @@ import CssProperty from "./CssProperty";
 
 const MainColumn = styled.section`
     width: 100%;
+
     h2 {
         text-align: center;
     }

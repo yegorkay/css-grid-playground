@@ -11,6 +11,10 @@ const AppStyle = styled.div`
     @media (max-width: 1170px) {
         width: 100%;
     }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 `;
 
 class App extends Component {

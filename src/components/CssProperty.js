@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import CssCode from "./CssCode";
 import CssGrid from "./CssGrid";
 import styled from "styled-components";
+import CssGridChild from "./CssGridChild";
 
 const CssPropertyContainer = styled.div`
-    padding: 6px 16px;
+    padding: 16px;
+    margin: 32px 16px;
+    border: 1px solid black;
+    border-radius: 5px;
 `;
 
 class CssProperty extends Component {
@@ -16,7 +20,18 @@ class CssProperty extends Component {
                     cssSelector={this.props.cssSelector}
                     cssValue={this.props.cssValue.values}
                 />
-                <CssGrid />
+                <CssGrid>
+                    <CssGridChild />
+                    <CssGridChild />
+                    <CssGridChild />
+                    <CssGridChild />
+                    <CssGridChild />
+                    <CssGridChild />
+                    <CssGridChild />
+                    <CssGridChild />
+                    <CssGridChild />
+                    <CssGridChild />
+                </CssGrid>
             </CssPropertyContainer>
         );
     }
