@@ -6,7 +6,9 @@ class CssGridChild extends Component {
         //on click we want to add a new code editor for that specific child
         // onClick={() => console.log(this.props.children)}
         return (
-            <CssChild style={this.props.sheet}>{this.props.children}</CssChild>
+            <CssChild childStyle={this.props.sheet}>
+                {this.props.children}
+            </CssChild>
         );
     }
 }

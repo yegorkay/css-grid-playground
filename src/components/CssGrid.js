@@ -4,29 +4,15 @@ import { CssGridContainer } from "../styled-components";
 
 class CssGrid extends Component {
     render() {
-        // console.log(this.props.childSheet);
-        let defaultGrid = {
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(64px, 1fr))",
-            gridTemplateRows: "auto",
-            gridGap: "8px",
-            gridAutoColumns: "1fr"
-        };
-
-        defaultGrid[this.props.cssValue] =
-            this.props.cssInputValue ||
-            "some sort of selected prop for the children";
-
         return (
-            <CssGridContainer
-                style={
-                    this.props.defaultSheet
-                        ? this.props.defaultSheet
-                        : defaultGrid
-                }
-            >
+            <CssGridContainer gridStyle={this.props.defaultSheet}>
                 {React.Children.map(this.props.children, (child, i) => (
-                    <CssGridChild key={i} sheet={this.props.childSheet}>
+                    <CssGridChild
+                        key={i}
+                        sheet={this.props.childSheet}
+                        cssValue={this.props.cssValue}
+                        cssSelector={this.props.cssSelector}
+                    >
                         {i + 1}
                     </CssGridChild>
                 ))}

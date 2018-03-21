@@ -6,7 +6,7 @@ import { CssPropertyContainer } from "../styled-components";
 
 class CssProperty extends Component {
     state = {
-        children: 14,
+        children: 12,
         cssInputValue: this.props.cssValue.defaultValue,
         defaultSheet: this.props.cssValue.defaultCSS,
         gridChildSheet: this.props.cssValue.gridChildCSS
@@ -45,7 +45,7 @@ class CssProperty extends Component {
     };
 
     resetChild = () => {
-        this.setState({ children: 14 });
+        this.setState({ children: 12 });
     };
 
     componentDidMount() {
@@ -88,6 +88,7 @@ class CssProperty extends Component {
                     bigChange={this.changeHandler}
                     cssValue={this.props.cssValue.property}
                     childSheet={this.state.gridChildSheet}
+                    cssSelector={this.props.cssSelector}
                 >
                     {gridChildren}
                 </CssGrid>

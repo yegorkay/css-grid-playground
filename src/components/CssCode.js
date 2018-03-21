@@ -19,7 +19,7 @@ class CssCode extends Component {
         });
     };
 
-    valueMatch = (state, value) => {
+    handleMatch = (state, value) => {
         if (state === value) {
             return true;
         }
@@ -43,19 +43,19 @@ class CssCode extends Component {
             <div>
                 <button
                     onClick={this.props.addChild}
-                    disabled={this.valueMatch(this.props.childState, 42)}
+                    disabled={this.handleMatch(this.props.childState, 42)}
                 >
                     +
                 </button>
                 <button
                     onClick={this.props.removeChild}
-                    disabled={this.valueMatch(this.props.childState, 1)}
+                    disabled={this.handleMatch(this.props.childState, 1)}
                 >
                     -
                 </button>
                 <button
                     onClick={this.props.resetChild}
-                    disabled={this.valueMatch(this.props.childState, 14)}
+                    disabled={this.handleMatch(this.props.childState, 12)}
                 >
                     reset
                 </button>
@@ -92,7 +92,7 @@ class CssCode extends Component {
                 )}
 
                 <CodeEditor>
-                    <label>{gridProperty}:</label>
+                    <label>{`${gridProperty}:`}</label>
                     {vals
                         ? vals.map((val, i) => (
                               <React.Fragment key={`${title}-${val}`}>
@@ -100,7 +100,7 @@ class CssCode extends Component {
                                       type="radio"
                                       id={`${val}${uniqueId}`}
                                       name={gridProperty}
-                                      checked={this.valueMatch(
+                                      checked={this.handleMatch(
                                           this.state.selected,
                                           val
                                       )}

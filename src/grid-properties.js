@@ -77,7 +77,7 @@ const parentCSS = [
         values: ["start", "end", "center", "stretch"],
         defaultCSS: {
             display: "grid",
-            gridTemplateColumns: "repeat(7, 1fr)",
+            gridTemplateColumns: "repeat(6, 1fr)",
             gridGap: "8px 8px",
             gridAutoRows: "40px",
             outline: "crimson solid 2px"
@@ -94,7 +94,7 @@ const parentCSS = [
         values: ["start", "end", "center", "stretch"],
         defaultCSS: {
             display: "grid",
-            gridTemplateColumns: "repeat(7, 1fr)",
+            gridTemplateColumns: "repeat(4, 1fr)",
             gridAutoRows: "80px",
             gridGap: "10px",
             outline: "crimson solid 2px"
@@ -118,7 +118,7 @@ const parentCSS = [
         ],
         defaultCSS: {
             display: "grid",
-            gridTemplateColumns: "repeat(2, 5em)",
+            gridTemplateColumns: "repeat(3, 5em)",
             gridAutoRows: "80px",
             gridGap: "10px",
             outline: "crimson solid 2px"

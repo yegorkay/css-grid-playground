@@ -107,7 +107,7 @@ export const CssChild = styled.div`
     display: grid;
     border-radius: 5px;
     user-select: none;
-    ${props => props.globalItemStyle};
+    ${props => props.childStyle};
 `;
 
 export const CssGridContainer = styled.div`
@@ -115,4 +115,5 @@ export const CssGridContainer = styled.div`
     border-radius: 5px;
     margin-top: 16px;
     padding: 8px;
+    ${props => props.gridStyle};
 `;
