@@ -1,27 +1,34 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import CssGridChild from "./CssGridChild";
-
-const CssGridContainer = styled.div`
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-top: 16px;
-    padding: 8px;
-`;
+import { CssGridContainer } from "../styled-components";
 
 class CssGrid extends Component {
     render() {
-        const defaultGrid = {
+        // console.log(this.props.childSheet);
+        let defaultGrid = {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(64px, 1fr))",
-            justifyItems: "center",
-            gridGap: "8px"
+            gridTemplateRows: "auto",
+            gridGap: "8px",
+            gridAutoColumns: "1fr"
         };
 
+        defaultGrid[this.props.cssValue] =
+            this.props.cssInputValue ||
+            "some sort of selected prop for the children";
+
         return (
-            <CssGridContainer style={defaultGrid}>
+            <CssGridContainer
+                style={
+                    this.props.defaultSheet
+                        ? this.props.defaultSheet
+                        : defaultGrid
+                }
+            >
                 {React.Children.map(this.props.children, (child, i) => (
-                    <CssGridChild>{i + 1}</CssGridChild>
+                    <CssGridChild key={i} sheet={this.props.childSheet}>
+                        {i + 1}
+                    </CssGridChild>
                 ))}
             </CssGridContainer>
         );

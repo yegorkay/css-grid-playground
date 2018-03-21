@@ -1,19 +1,13 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-
-const CssChild = styled.div`
-    background: #cccccc;
-    height: 64px;
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-`;
+import { CssChild } from "../styled-components";
 
 class CssGridChild extends Component {
     render() {
-        return <CssChild>{this.props.children}</CssChild>;
+        //on click we want to add a new code editor for that specific child
+        // onClick={() => console.log(this.props.children)}
+        return (
+            <CssChild style={this.props.sheet}>{this.props.children}</CssChild>
+        );
     }
 }
 

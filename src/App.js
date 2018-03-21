@@ -1,21 +1,8 @@
 import React, { Component } from "react";
 import Column from "./components/Column";
 import Header from "./components/Header";
-import styled from "styled-components";
 import { cssGrid } from "./grid-properties";
-
-const AppStyle = styled.div`
-    width: 1170px;
-    margin: 0 auto;
-    display: flex;
-    @media (max-width: 1170px) {
-        width: 100%;
-    }
-
-    @media (max-width: 600px) {
-        flex-direction: column;
-    }
-`;
+import { AppStyle } from "./styled-components";
 
 class App extends Component {
     render() {

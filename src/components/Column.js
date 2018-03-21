@@ -1,24 +1,16 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import CssProperty from "./CssProperty";
-
-const MainColumn = styled.section`
-    width: 100%;
-
-    h2 {
-        text-align: center;
-    }
-`;
+import { MainColumn } from "../styled-components";
 
 class Column extends Component {
     render() {
         return (
             <MainColumn>
                 <h2>{`${this.props.name} Properties`}</h2>
-                {this.props.cssProp.map(d => (
+                {this.props.cssProp.map(css => (
                     <CssProperty
-                        key={d.property}
-                        cssValue={d}
+                        key={css.property}
+                        cssValue={css}
                         cssSelector={this.props.name}
                     />
                 ))}

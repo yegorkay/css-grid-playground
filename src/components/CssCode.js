@@ -1,82 +1,80 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import { cssCase } from "../helpers";
-
-const CssCodeContainer = styled.div`
-    background: #cccccc;
-    padding: 16px;
-    border-radius: 5px;
-
-    p {
-        margin: 0 0 8px 0;
-    }
-
-    a {
-        text-decoration: none;
-        font-style: italic;
-        float: right;
-        margin: 8px 0 0 0;
-
-        &:hover {
-            text-decoration: underline;
-        }
-
-        & + div {
-            clear: both;
-        }
-    }
-`;
-
-const CodeEditor = styled.div`
-    margin: 0 0 8px 16px;
-
-    label {
-        margin-right: 8px;
-    }
-
-    input {
-        border: none;
-    }
-
-    input[type="radio"] {
-        margin: 0 8px;
-        vertical-align: middle;
-    }
-
-    input[type="radio"] + label {
-        cursor: pointer;
-    }
-`;
-
-const ChildSelector = styled.div`
-    display: flex;
-    justify-content: space-between;
-
-    button:first-child {
-        margin-right: 2px;
-    }
-`;
+import {
+    CssCodeContainer,
+    CodeEditor,
+    ChildSelector
+} from "../styled-components";
 
 class CssCode extends Component {
+    state = {
+        selected: this.props.cssGrid.values
+            ? this.props.cssGrid.values[0]
+            : null
+    };
+
+    radioHandler = e => {
+        this.setState({
+            selected: e.target.value
+        });
+    };
+
+    valueMatch = (state, value) => {
+        if (state === value) {
+            return true;
+        }
+        return false;
+    };
+
     render() {
-        const vals = this.props.cssValue;
+        const vals = this.props.cssGrid.values;
         const title = `${this.props.cssSelector.toLowerCase()}`;
-        const input = <input type="text" placeholder=" some value here" />;
-        const gridProperty = cssCase(this.props.gridProp);
+        const input = (
+            <input
+                type="text"
+                placeholder=" some value here"
+                onChange={this.props.textChange}
+                value={this.props.cssInputValue}
+                onFocus={e => e.target.select()}
+                onKeyDown={e => (e.keyCode === 186 ? e.preventDefault() : null)}
+            />
+        );
+        const buttonToggle = (
+            <div>
+                <button
+                    onClick={this.props.addChild}
+                    disabled={this.valueMatch(this.props.childState, 42)}
+                >
+                    +
+                </button>
+                <button
+                    onClick={this.props.removeChild}
+                    disabled={this.valueMatch(this.props.childState, 1)}
+                >
+                    -
+                </button>
+                <button
+                    onClick={this.props.resetChild}
+                    disabled={this.valueMatch(this.props.childState, 14)}
+                >
+                    reset
+                </button>
+            </div>
+        );
+        const gridProperty = cssCase(this.props.cssGrid.property);
         const uniqueId = `-${this.props.cssSelector}-${cssCase(
-            this.props.gridProp
+            this.props.cssGrid.property
         )}`.toLowerCase();
+
+        const mdn = "https://developer.mozilla.org/en-US/docs/Web/CSS/";
 
         const mdnLink = (
             <React.Fragment>
                 <a
                     target="_blank"
-                    href={
-                        `https://developer.mozilla.org/en-US/docs/Web/CSS/` +
-                        cssCase(this.props.gridProp)
-                    }
+                    href={mdn + cssCase(this.props.cssGrid.property)}
                 >
-                    {`${cssCase(this.props.gridProp)} docs →`}
+                    {`${gridProperty} docs →`}
                 </a>
                 <div />
             </React.Fragment>
@@ -84,32 +82,39 @@ class CssCode extends Component {
 
         return (
             <CssCodeContainer>
-                {/* Render an appropriate title component */}
                 {this.props.cssSelector === "Parent" ? (
                     <p>{`${title}-container {`}</p>
                 ) : (
                     <ChildSelector>
                         <p>{`${title}-selector {`}</p>
-                        <div className="child-selector__toggle">
-                            <button>+</button>
-                            <button>-</button>
-                        </div>
+                        {buttonToggle}
                     </ChildSelector>
                 )}
 
                 <CodeEditor>
                     <label>{gridProperty}:</label>
-                    {/* If CSS values property exists, render out inputs with labels */}
                     {vals
-                        ? vals.map(x => (
-                              <React.Fragment key={`${title}-${x}`}>
+                        ? vals.map((val, i) => (
+                              <React.Fragment key={`${title}-${val}`}>
                                   <input
                                       type="radio"
-                                      id={`${x}${uniqueId}`}
+                                      id={`${val}${uniqueId}`}
                                       name={gridProperty}
+                                      checked={this.valueMatch(
+                                          this.state.selected,
+                                          val
+                                      )}
+                                      value={val}
+                                      onChange={this.radioHandler}
+                                      onClick={() =>
+                                          this.props.handleCSS(
+                                              this.props.cssGrid.property,
+                                              val
+                                          )
+                                      }
                                   />
-                                  <label htmlFor={`${x}${uniqueId}`}>
-                                      {cssCase(x)}
+                                  <label htmlFor={`${val}${uniqueId}`}>
+                                      {cssCase(val)}
                                   </label>
                               </React.Fragment>
                           ))
