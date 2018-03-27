@@ -25,10 +25,10 @@ const parentCSS = [
     },
     {
         property: "gridTemplateRows",
-        defaultValue: "1fr 150px 2fr 20em",
+        defaultValue: "3em 6em 9em 12em",
         defaultCSS: {
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "100px 50px 1fr",
             gridGap: "8px",
             outline: "2px solid crimson"
         },
@@ -145,33 +145,200 @@ const parentCSS = [
 
 const childCSS = [
     {
-        property: "gridColumnStart"
+        property: "gridColumnStart",
+        defaultValue: "span 2",
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateRows: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     },
     {
-        property: "gridColumnEnd"
+        property: "gridColumnEnd",
+        defaultValue: "-1",
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateRows: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     },
     {
-        property: "gridRowStart"
+        property: "gridRowStart",
+        defaultValue: "-1",
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateRows: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     },
     {
-        property: "gridRowEnd"
+        property: "gridRowEnd",
+        defaultValue: "-1",
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateRows: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     },
     {
-        property: "gridColumn"
+        property: "gridColumn",
+        defaultValue: "2/-1",
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateRows: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     },
     {
-        property: "gridRow"
+        property: "gridRow",
+        defaultValue: "1/span 6",
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateRows: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     },
     {
-        property: "gridArea"
+        property: "gridArea",
+        defaultValue: "2 / 1 / 2 / 4",
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateRows: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     },
     {
         property: "justifySelf",
-        values: ["start", "end", "center", "stretch"]
+        values: ["start", "end", "center", "stretch"],
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     },
     {
         property: "alignSelf",
-        values: ["start", "end", "center", "stretch"]
+        values: ["start", "end", "center", "stretch"],
+        defaultCSS: {
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridAutoRows: "80px",
+            gridGap: "10px",
+            outline: "crimson solid 2px"
+        },
+        gridChildCSS: {
+            background: "Crimson",
+            color: "white",
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        singleChild: {
+            fontStyle: "italic",
+            fontWeight: "bold"
+        }
     }
 ];
 

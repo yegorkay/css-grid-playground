@@ -102,12 +102,31 @@ export const ChildSelector = styled.div`
     }
 `;
 
+export const ChildName = styled.div`
+    display: flex;
+    align-items: center;
+    margin: 0 0 8px 0;
+
+    p {
+        margin: 0;
+    }
+
+    input {
+        width: 20px;
+        height: 16px;
+        margin: 0 4px;
+        text-align: center;
+        border: 0;
+    }
+`;
+
 export const CssChild = styled.div`
     background: #cccccc;
     display: grid;
     border-radius: 5px;
     user-select: none;
     ${props => props.childStyle};
+    ${props => props.singleStyle};
 `;
 
 export const CssGridContainer = styled.div`

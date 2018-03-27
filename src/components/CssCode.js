@@ -3,7 +3,8 @@ import { cssCase } from "../helpers";
 import {
     CssCodeContainer,
     CodeEditor,
-    ChildSelector
+    ChildSelector,
+    ChildName
 } from "../styled-components";
 
 class CssCode extends Component {
@@ -83,10 +84,27 @@ class CssCode extends Component {
         return (
             <CssCodeContainer>
                 {this.props.cssSelector === "Parent" ? (
-                    <p>{`${title}-container {`}</p>
+                    <p>{`.${title}-container {`}</p>
                 ) : (
                     <ChildSelector>
-                        <p>{`${title}-selector {`}</p>
+                        <ChildName>
+                            <p>{`.nth-${title}`}</p>
+                            <input
+                                value={this.props.nthChild}
+                                onChange={this.props.childHandler}
+                                pattern="\d*"
+                                maxLength="2"
+                            />
+                            <p>{"{"}</p>
+                        </ChildName>
+                        {/* <p>{`.nth-${title} {`}</p> */}
+                        {/* <input
+                            style={{ width: "25px", textAlign: "center" }}
+                            value={this.props.nthChild}
+                            onChange={this.props.childHandler}
+                            pattern="\d*"
+                            maxLength="2"
+                        /> */}
                         {buttonToggle}
                     </ChildSelector>
                 )}
@@ -106,11 +124,20 @@ class CssCode extends Component {
                                       )}
                                       value={val}
                                       onChange={this.radioHandler}
-                                      onClick={() =>
-                                          this.props.handleCSS(
-                                              this.props.cssGrid.property,
-                                              val
-                                          )
+                                      onClick={
+                                          this.props.cssSelector === "Parent"
+                                              ? () =>
+                                                    this.props.handleCSS(
+                                                        this.props.cssGrid
+                                                            .property,
+                                                        val
+                                                    )
+                                              : () =>
+                                                    this.props.handleChild(
+                                                        this.props.cssGrid
+                                                            .property,
+                                                        val
+                                                    )
                                       }
                                   />
                                   <label htmlFor={`${val}${uniqueId}`}>

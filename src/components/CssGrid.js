@@ -12,6 +12,8 @@ class CssGrid extends Component {
                         sheet={this.props.childSheet}
                         cssValue={this.props.cssValue}
                         cssSelector={this.props.cssSelector}
+                        singleChild={this.props.singleChild}
+                        nthChild={this.props.nthChild}
                     >
                         {i + 1}
                     </CssGridChild>
