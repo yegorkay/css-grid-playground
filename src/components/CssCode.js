@@ -33,7 +33,7 @@ class CssCode extends Component {
         const input = (
             <input
                 type="text"
-                placeholder=" some value here"
+                placeholder="some value here"
                 onChange={this.props.textChange}
                 value={this.props.cssInputValue}
                 onFocus={e => e.target.select()}
@@ -97,15 +97,7 @@ class CssCode extends Component {
                             />
                             <p>{"{"}</p>
                         </ChildName>
-                        {/* <p>{`.nth-${title} {`}</p> */}
-                        {/* <input
-                            style={{ width: "25px", textAlign: "center" }}
-                            value={this.props.nthChild}
-                            onChange={this.props.childHandler}
-                            pattern="\d*"
-                            maxLength="2"
-                        /> */}
-                        {buttonToggle}
+                        {/* {buttonToggle} */}
                     </ChildSelector>
                 )}
 

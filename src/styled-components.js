@@ -1,9 +1,17 @@
 import styled from "styled-components";
+import { injectGlobal } from "styled-components";
+
+injectGlobal`
+    body {
+        font-family: "Montserrat", sans-serif;
+        background: #F0F3F7;
+    }
+`;
 
 export const AppStyle = styled.div`
     width: 1170px;
     margin: 0 auto;
-    padding: 200px 0 0 0;
+    padding: 160px 0 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     @media (max-width: 1170px) {
@@ -18,6 +26,7 @@ export const AppStyle = styled.div`
 
 export const MainColumn = styled.section`
     h2 {
+        color: hsl(0, 0%, 13%);
         text-align: center;
     }
 `;
@@ -25,7 +34,8 @@ export const MainColumn = styled.section`
 export const StyledHeader = styled.header`
     padding: 16px;
     margin-bottom: 48px;
-    border-bottom: 2px solid black;
+    border-bottom: 4px solid #5f65af;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
     position: fixed;
     top: 0;
     left: 0;
@@ -34,30 +44,36 @@ export const StyledHeader = styled.header`
     h1 {
         margin: 0;
         font-size: 24px;
+        color: hsl(0, 0%, 13%);
     }
 `;
 
 export const CssPropertyContainer = styled.div`
-    padding: 16px;
+    background: white;
     margin: 32px 16px;
-    border: 1px solid black;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
     border-radius: 5px;
 `;
 
-export const CssCodeContainer = styled.div`
-    background: #cccccc;
+export const CssCodeContainer = styled.code`
     padding: 16px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+    font-size: 16px;
+    color: hsl(0, 0%, 13%);
+    background: white;
 
     p {
-        margin: 0 0 8px 0;
+        margin: 0 0 2px 0;
     }
 
     a {
+        color: rgba(45, 49, 66, 0.8);
         text-decoration: none;
-        font-style: italic;
         float: right;
-        margin: 8px 0 0 0;
+        margin: 14px 0 0 0;
+        font-family: "Montserrat", sans-serif;
 
         &:hover {
             text-decoration: underline;
@@ -70,14 +86,29 @@ export const CssCodeContainer = styled.div`
 `;
 
 export const CodeEditor = styled.div`
-    margin: 0 0 8px 16px;
+    margin: 0 0 2px 16px;
 
     label {
         margin-right: 8px;
+        color: #fa7459;
+        &:first-child {
+            color: #5f65af;
+        }
     }
 
     input {
+        color: #fa7459;
+        background: none;
+        font-family: monospace;
+        text-decoration: underline;
+        font-size: 16px;
         border: none;
+        padding: 2px 4px;
+        border-radius: 3px;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     input[type="radio"] {
@@ -103,9 +134,8 @@ export const ChildSelector = styled.div`
 `;
 
 export const ChildName = styled.div`
-    display: flex;
-    align-items: center;
-    margin: 0 0 8px 0;
+    display: -webkit-box;
+    margin: 0 0 2px 0;
 
     p {
         margin: 0;
@@ -116,12 +146,18 @@ export const ChildName = styled.div`
         height: 16px;
         margin: 0 4px;
         text-align: center;
-        border: 0;
+        border: none;
+        color: #5f65af;
+        border-bottom: 1px solid #5f65af;
+
+        &:focus {
+            outline: none;
+        }
     }
 `;
 
 export const CssChild = styled.div`
-    background: #cccccc;
+    background: #98dfaf;
     display: grid;
     border-radius: 5px;
     user-select: none;
@@ -130,9 +166,8 @@ export const CssChild = styled.div`
 `;
 
 export const CssGridContainer = styled.div`
-    border: 1px solid black;
+    background: #f9f9f9;
     border-radius: 5px;
-    margin-top: 16px;
-    padding: 8px;
+    padding: 16px;
     ${props => props.gridStyle};
 `;
