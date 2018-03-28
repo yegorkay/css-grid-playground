@@ -52,13 +52,13 @@ export const CssPropertyContainer = styled.div`
     background: white;
     margin: 32px 16px;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
-    border-radius: 5px;
+    border-radius: 8px;
 `;
 
 export const CssCodeContainer = styled.code`
     padding: 16px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     display: block;
     font-size: 16px;
     color: hsl(0, 0%, 13%);
@@ -69,14 +69,23 @@ export const CssCodeContainer = styled.code`
     }
 
     a {
-        color: rgba(45, 49, 66, 0.8);
+        display: inline-block;
+        color: rgba(45, 49, 66, 0.6);
         text-decoration: none;
         float: right;
         margin: 14px 0 0 0;
-        font-family: "Montserrat", sans-serif;
 
-        &:hover {
-            text-decoration: underline;
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 1px;
+            background: rgba(45, 49, 66, 0.4);
+            transition: width 0.25s;
+        }
+
+        &:hover:after {
+            width: 100%;
         }
 
         & + div {
@@ -100,7 +109,6 @@ export const CodeEditor = styled.div`
         color: #fa7459;
         background: none;
         font-family: monospace;
-        text-decoration: underline;
         font-size: 16px;
         border: none;
         padding: 2px 4px;
@@ -147,8 +155,7 @@ export const ChildName = styled.div`
         margin: 0 4px;
         text-align: center;
         border: none;
-        color: #5f65af;
-        border-bottom: 1px solid #5f65af;
+        color: #fa7459;
 
         &:focus {
             outline: none;
@@ -161,13 +168,15 @@ export const CssChild = styled.div`
     display: grid;
     border-radius: 5px;
     user-select: none;
+    font-weight: 700;
     ${props => props.childStyle};
     ${props => props.singleStyle};
 `;
 
 export const CssGridContainer = styled.div`
     background: #f9f9f9;
-    border-radius: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     padding: 16px;
     ${props => props.gridStyle};
 `;

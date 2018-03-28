@@ -36,31 +36,8 @@ class CssCode extends Component {
                 placeholder="some value here"
                 onChange={this.props.textChange}
                 value={this.props.cssInputValue}
-                onFocus={e => e.target.select()}
                 onKeyDown={e => (e.keyCode === 186 ? e.preventDefault() : null)}
             />
-        );
-        const buttonToggle = (
-            <div>
-                <button
-                    onClick={this.props.addChild}
-                    disabled={this.handleMatch(this.props.childState, 42)}
-                >
-                    +
-                </button>
-                <button
-                    onClick={this.props.removeChild}
-                    disabled={this.handleMatch(this.props.childState, 1)}
-                >
-                    -
-                </button>
-                <button
-                    onClick={this.props.resetChild}
-                    disabled={this.handleMatch(this.props.childState, 12)}
-                >
-                    reset
-                </button>
-            </div>
         );
         const gridProperty = cssCase(this.props.cssGrid.property);
         const uniqueId = `-${this.props.cssSelector}-${cssCase(
@@ -75,7 +52,7 @@ class CssCode extends Component {
                     target="_blank"
                     href={mdn + cssCase(this.props.cssGrid.property)}
                 >
-                    {`${gridProperty} docs →`}
+                    {`// ${gridProperty} docs →`}
                 </a>
                 <div />
             </React.Fragment>
@@ -97,7 +74,6 @@ class CssCode extends Component {
                             />
                             <p>{"{"}</p>
                         </ChildName>
-                        {/* {buttonToggle} */}
                     </ChildSelector>
                 )}
 

@@ -154,8 +154,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     },
     {
@@ -175,8 +174,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     },
     {
@@ -196,8 +194,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     },
     {
@@ -217,13 +214,12 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     },
     {
         property: "gridColumn",
-        defaultValue: "2/-1",
+        defaultValue: "2 / -1",
         defaultCSS: {
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -238,13 +234,12 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     },
     {
         property: "gridRow",
-        defaultValue: "1/span 6",
+        defaultValue: "1 / span 6",
         defaultCSS: {
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -259,8 +254,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     },
     {
@@ -280,8 +274,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     },
     {
@@ -300,8 +293,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     },
     {
@@ -320,8 +312,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            fontStyle: "italic",
-            fontWeight: "bold"
+            background: "#5f65af"
         }
     }
 ];
