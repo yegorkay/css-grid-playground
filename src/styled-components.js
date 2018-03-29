@@ -6,6 +6,8 @@ injectGlobal`
     body {
         font-family: ${fonts.montserrat};
         background: ${colors.catSkillWhite};
+        margin: 0;
+        padding: 0;
     }
 `;
 
