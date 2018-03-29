@@ -154,7 +154,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     },
     {
@@ -174,7 +174,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     },
     {
@@ -194,7 +194,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     },
     {
@@ -214,7 +214,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     },
     {
@@ -234,7 +234,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     },
     {
@@ -254,7 +254,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     },
     {
@@ -274,7 +274,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     },
     {
@@ -293,7 +293,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     },
     {
@@ -312,7 +312,7 @@ const childCSS = [
             alignItems: "center"
         },
         singleChild: {
-            background: "#5f65af"
+            background: "#905"
         }
     }
 ];

@@ -26,6 +26,8 @@ export const AppStyle = styled.div`
 
 export const MainColumn = styled.section`
     h2 {
+        font-family: monospace;
+        font-size: 24px;
         color: hsl(0, 0%, 13%);
         text-align: center;
     }
@@ -34,7 +36,7 @@ export const MainColumn = styled.section`
 export const StyledHeader = styled.header`
     padding: 16px;
     margin-bottom: 48px;
-    border-bottom: 4px solid #5f65af;
+    border-bottom: 4px solid #905;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
     position: fixed;
     top: 0;
@@ -70,7 +72,7 @@ export const CssCodeContainer = styled.code`
 
     a {
         display: inline-block;
-        color: rgba(45, 49, 66, 0.6);
+        color: rgba(45, 49, 66, 0.8);
         text-decoration: none;
         float: right;
         margin: 14px 0 0 0;
@@ -99,20 +101,21 @@ export const CodeEditor = styled.div`
 
     label {
         margin-right: 8px;
-        color: #fa7459;
+        color: #07a;
         &:first-child {
-            color: #5f65af;
+            color: #905;
         }
     }
 
     input {
-        color: #fa7459;
+        color: #07a;
         background: none;
         font-family: monospace;
         font-size: 16px;
         border: none;
         padding: 2px 4px;
         border-radius: 3px;
+        text-decoration: underline;
 
         &:focus {
             outline: none;
@@ -122,10 +125,26 @@ export const CodeEditor = styled.div`
     input[type="radio"] {
         margin: 0 8px;
         vertical-align: middle;
+        display: none;
+    }
+
+    input[type="radio"]:checked + label {
+        color: #990055;
+        font-style: normal;
+        text-decoration: underline;
     }
 
     input[type="radio"] + label {
         cursor: pointer;
+
+        &:not(:last-child):after {
+            content: "|";
+            -webkit-text-decoration: none;
+            text-decoration: none !important;
+            display: inline-block;
+            color: #07a;
+            padding: 0 0 0 8px;
+        }
     }
 `;
 
@@ -155,7 +174,7 @@ export const ChildName = styled.div`
         margin: 0 4px;
         text-align: center;
         border: none;
-        color: #fa7459;
+        color: #07a;
 
         &:focus {
             outline: none;
@@ -164,7 +183,7 @@ export const ChildName = styled.div`
 `;
 
 export const CssChild = styled.div`
-    background: #98dfaf;
+    background: #0077aa;
     display: grid;
     border-radius: 5px;
     user-select: none;
@@ -174,7 +193,7 @@ export const CssChild = styled.div`
 `;
 
 export const CssGridContainer = styled.div`
-    background: #f9f9f9;
+    background: #c1dff0;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     padding: 16px;
