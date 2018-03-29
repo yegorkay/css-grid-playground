@@ -1,8 +1,15 @@
+import { colors } from "./style-settings";
+
 const basicChild = {
-    // background: "CornflowerBlue",
-    color: "white",
+    color: colors.white,
     padding: "16px 0",
     display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+};
+
+const basicGridChild = {
+    color: colors.white,
     justifyContent: "center",
     alignItems: "center"
 };
@@ -77,12 +84,7 @@ const parentCSS = [
             gridGap: "8px 8px",
             gridAutoRows: "40px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        }
+        gridChildCSS: basicGridChild
     },
     {
         property: "alignItems",
@@ -93,12 +95,7 @@ const parentCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        }
+        gridChildCSS: basicGridChild
     },
     {
         property: "justifyContent",
@@ -116,12 +113,7 @@ const parentCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        }
+        gridChildCSS: basicGridChild
     }
     // {
     //     property: "gridAutoColumns"
@@ -147,14 +139,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     },
     {
@@ -167,14 +154,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     },
     {
@@ -187,14 +169,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     },
     {
@@ -207,14 +184,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     },
     {
@@ -227,14 +199,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     },
     {
@@ -247,14 +214,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     },
     {
@@ -267,14 +229,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     },
     {
@@ -286,14 +243,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     },
     {
@@ -305,14 +257,9 @@ const childCSS = [
             gridAutoRows: "80px",
             gridGap: "10px"
         },
-        gridChildCSS: {
-            // background: "Crimson",
-            color: "white",
-            justifyContent: "center",
-            alignItems: "center"
-        },
+        gridChildCSS: basicGridChild,
         singleChild: {
-            background: "#905"
+            background: colors.freshEggPlant
         }
     }
 ];

@@ -3,20 +3,55 @@ import { injectGlobal } from "styled-components";
 import { colors, fonts } from "./style-settings";
 
 injectGlobal`
+    html { 
+        box-sizing: border-box; 
+    } 
+    
+    *, *:before, *:after { 
+        box-sizing: inherit; 
+    }
+
     body {
         font-family: ${fonts.montserrat};
-        background: ${colors.catSkillWhite};
+        background: ${colors.white};
         margin: 0;
         padding: 0;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 24px;
+        color: ${colors.mineShaft};
+    }
+
+    h2 {
+        font-family: ${fonts.monospace};
+        font-size: 24px;
+        color: ${colors.mineShaft};
+        text-align: center;
+    }
+
+    input {
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 1px ${colors.spindle};
+        }
+    }
+    
+    ::selection {
+        color: ${colors.alabaster};
+        background: ${colors.deepCerulean};
     }
 `;
 
 export const AppStyle = styled.div`
-    width: 1170px;
-    margin: 0 auto;
-    padding: 160px 0 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background: ${colors.catSkillWhite};
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    width: 1170px;
+    margin: 0 auto;
+    padding: 160px 8px 0 8px;
     @media (max-width: 1170px) {
         width: 100%;
     }
@@ -27,30 +62,18 @@ export const AppStyle = styled.div`
     }
 `;
 
-export const MainColumn = styled.section`
-    h2 {
-        font-family: ${fonts.monospace};
-        font-size: 24px;
-        color: ${colors.mineShaft};
-        text-align: center;
-    }
-`;
+export const MainColumn = styled.section``;
 
 export const StyledHeader = styled.header`
+    background: ${colors.white};
+    margin: 0 0 48px 0;
     padding: 16px;
-    margin-bottom: 48px;
-    border-bottom: 4px solid ${colors.freshEggPlant};
+    width: 100%;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    border-bottom: 4px solid ${colors.freshEggPlant};
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    background: ${colors.white};
-    h1 {
-        margin: 0;
-        font-size: 24px;
-        color: ${colors.mineShaft};
-    }
 `;
 
 export const CssPropertyContainer = styled.div`
@@ -112,17 +135,12 @@ export const CodeEditor = styled.div`
 
     input {
         color: ${colors.deepCerulean};
-        background: none;
+        background: ${colors.alabaster};
         font-family: ${fonts.monospace};
         font-size: 16px;
         border: none;
         padding: 2px 4px;
-        border-radius: 3px;
-        text-decoration: underline;
-
-        &:focus {
-            outline: none;
-        }
+        border-radius: 5px;
     }
 
     input[type="radio"] {
@@ -169,6 +187,8 @@ export const ChildName = styled.div`
         margin: 0 4px;
         text-align: center;
         border: none;
+        border-radius: 3px;
+        background: ${colors.alabaster};
         color: ${colors.deepCerulean};
 
         &:focus {

@@ -1,4 +1,5 @@
 export const colors = {
+    alabaster: "#f7f7f7",
     deepCerulean: "#0077AA",
     catSkillWhite: "#F0F3F7",
     ebonyClay: "#2D3142",
