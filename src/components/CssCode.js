@@ -30,6 +30,7 @@ class CssCode extends Component {
     render() {
         const vals = this.props.cssGrid.values;
         const title = `${this.props.cssSelector.toLowerCase()}`;
+        const gridProperty = cssCase(this.props.cssGrid.property);
         const input = (
             <input
                 type="text"
@@ -37,9 +38,10 @@ class CssCode extends Component {
                 onChange={this.props.textChange}
                 value={this.props.cssInputValue}
                 onKeyDown={e => (e.keyCode === 186 ? e.preventDefault() : null)}
+                id={gridProperty}
             />
         );
-        const gridProperty = cssCase(this.props.cssGrid.property);
+
         const uniqueId = `-${this.props.cssSelector}-${cssCase(
             this.props.cssGrid.property
         )}`.toLowerCase();
@@ -50,6 +52,7 @@ class CssCode extends Component {
             <React.Fragment>
                 <a
                     target="_blank"
+                    rel="noopener"
                     href={mdn + cssCase(this.props.cssGrid.property)}
                 >
                     {`// ${gridProperty} docs →`}
@@ -65,8 +68,11 @@ class CssCode extends Component {
                 ) : (
                     <ChildSelector>
                         <ChildName>
-                            <p>{`.nth-${title}`}</p>
+                            <label
+                                htmlFor={`${gridProperty}-${title}`}
+                            >{`.nth-${title}`}</label>
                             <input
+                                id={`${gridProperty}-${title}`}
                                 value={this.props.nthChild}
                                 onChange={this.props.childHandler}
                                 pattern="\d*"
@@ -78,7 +84,7 @@ class CssCode extends Component {
                 )}
 
                 <CodeEditor>
-                    <label>{`${gridProperty}:`}</label>
+                    <label htmlFor={gridProperty}>{`${gridProperty}:`}</label>
                     {vals
                         ? vals.map((val, i) => (
                               <React.Fragment key={`${title}-${val}`}>
