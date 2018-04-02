@@ -18,14 +18,12 @@ class CssProperty extends Component {
         const defaultSheet = { ...this.state.defaultSheet };
         defaultSheet[property] = value;
         this.setState({ defaultSheet });
-        // console.log(defaultSheet);
     };
 
     handleChild = (property, value) => {
         const childSheet = { ...this.state.childSheet };
         childSheet[property] = value;
         this.setState({ childSheet });
-        // console.log(childSheet);
     };
 
     changeHandler = e => {
@@ -34,28 +32,6 @@ class CssProperty extends Component {
         this.setState({
             cssInputValue: e.target.value
         });
-    };
-
-    addChild = () => {
-        if (this.state.children === 42) {
-            return;
-        }
-        this.setState(prevState => ({
-            children: prevState.children + 1
-        }));
-    };
-
-    removeChild = () => {
-        if (this.state.children === 1) {
-            return;
-        }
-        this.setState(prevState => ({
-            children: prevState.children - 1
-        }));
-    };
-
-    resetChild = () => {
-        this.setState({ children: 12 });
     };
 
     childValueHandler = e => {
@@ -87,31 +63,24 @@ class CssProperty extends Component {
         return (
             <CssPropertyContainer>
                 <CssCode
+                    childHandler={this.childValueHandler}
                     cssGrid={this.props.cssValue}
+                    cssInputValue={this.state.cssInputValue}
                     cssSelector={this.props.cssSelector}
                     defaultSheet={this.state.defaultSheet}
                     handleCSS={this.handleCSS}
                     handleChild={this.handleChild}
-                    // need these props below to hold relevant default values
-                    cssInputValue={this.state.cssInputValue}
-                    textChange={this.changeHandler}
-                    //managing child state with buttons in CssCode
-                    removeChild={this.removeChild}
-                    addChild={this.addChild}
-                    resetChild={this.resetChild}
-                    childState={this.state.children}
                     nthChild={this.state.nthChild}
-                    childHandler={this.childValueHandler}
+                    textChange={this.changeHandler}
                 />
                 <CssGrid
-                    cssInputValue={this.state.cssInputValue}
-                    defaultSheet={this.state.defaultSheet}
-                    bigChange={this.changeHandler}
-                    cssValue={this.props.cssValue.property}
                     childSheet={this.state.gridChildSheet}
+                    cssInputValue={this.state.cssInputValue}
+                    cssValue={this.props.cssValue.property}
                     cssSelector={this.props.cssSelector}
-                    singleChild={this.state.childSheet}
+                    defaultSheet={this.state.defaultSheet}
                     nthChild={this.state.nthChild}
+                    singleChild={this.state.childSheet}
                 >
                     {gridChildren}
                 </CssGrid>
