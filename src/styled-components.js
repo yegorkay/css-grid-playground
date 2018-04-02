@@ -62,8 +62,6 @@ export const AppStyle = styled.div`
     }
 `;
 
-export const MainColumn = styled.section``;
-
 export const StyledHeader = styled.header`
     background: ${colors.white};
     margin: 0 0 48px 0;
