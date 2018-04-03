@@ -1,4 +1,4 @@
-# CSS Grid Playground
+# <a href="https://yegorkay.github.io/css-grid-playground/">CSS Grid Playground</a>
 
 CSS Grid Playground allows you to play with each individual grid property in order to understand what each property does in the layout. 
 
